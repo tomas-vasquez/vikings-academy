@@ -1,0 +1,25 @@
+/*
+ * Copyright (c) 2016, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+
+@import "_mixins.scss";
+@import "modal.scss";
+
+.megadraft-editor {
+    position: relative;
+
+    // @import 't ypography.scss';
+
+    @import 'sidebar.scss';
+
+    @import 'toolbar.scss';
+    @import "block.scss";
+    @import "dropdown.scss";
+
+    @import "media.scss";
+
+    @import "move-control.scss";
+
+}

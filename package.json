@@ -1,0 +1,75 @@
+{
+  "name": "tloging-v1",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^12.12.24",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-router": "^5.1.4",
+    "@types/react-router-dom": "^5.1.3",
+    "axios": "^0.19.2",
+    "chart.js": "^2.9.3",
+    "connected-react-router": "^6.8.0",
+    "dexie": "^3.0.1",
+    "draft-convert": "^2.1.10",
+    "draft-js-color-picker-plugin": "^1.2.0",
+    "draft-js-mention-plugin": "^3.1.5",
+    "html-react-parser": "^0.13.0",
+    "megadraft": "^0.7.2",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-chartjs-2": "^2.9.0",
+    "react-color": "^2.18.1",
+    "react-contenteditable": "^3.3.4",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^16.13.1",
+    "react-frame-component": "^4.1.2",
+    "react-inner-html": "^1.0.1",
+    "react-input-color": "^3.0.0",
+    "react-json-tree": "^0.11.2",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "react-video-js-player": "^1.1.1",
+    "reactstrap": "^8.4.1",
+    "reapop": "^2.1.0",
+    "reapop-theme-bootstrap": "^1.0.2",
+    "reapop-theme-wybo": "1.0.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "sweetalert2": "^9.15.1",
+    "typescript": "3.7.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "sass-default": "node-sass src/assets/scss/black-dashboard-react.scss src/assets/css/black-dashboard-react.min.css --output-style compressed",
+    "sass-megadraft": "node-sass -w --output-style compresed src/lib/megadraft/styles/megadraft.scss src/lib/megadraft/styles/megadraft.css "
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

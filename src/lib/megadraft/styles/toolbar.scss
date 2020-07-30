@@ -1,0 +1,143 @@
+
+/*
+ * Copyright (c) 2016, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+
+@import "_mixins.scss";
+
+.toolbar {
+    background-color: #ffffff;
+    border-bottom: solid 2px #ddd;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    height: 56px;
+    position: fixed;
+    z-index: 1051;
+    width: 100%;
+    
+    &--open {
+        display: block;
+    }
+
+    &__error-msg {
+        margin: 0;
+        height: 0;
+        height: 0;
+        transition: height 0.2s ease-in-out;
+    }
+
+    &--error {
+      .toolbar__wrapper {
+        background-color: #E83F26;
+      }
+      .toolbar__arrow {
+        border-color: #E83F26 transparent transparent;
+      }
+      .toolbar__error-msg {
+        color: #FFF;
+        margin: -8px 0 0 20px;
+        padding-bottom: 12px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        height: 28px;
+      }
+      .toolbar__button {
+        color: #FFF;
+      }
+      @include placeholder {
+        color: #FFF;
+      }
+    }
+
+    &__wrapper {
+        margin-right: auto;
+        margin-left: auto;
+
+        width: 100%;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    &__list {
+        padding: 0 8px;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+
+    &__item {
+        display: inline-block;
+        color: #333;
+
+        &:hover {
+            color: rgb(63, 63, 63);
+        }
+
+        &--active {
+            color: #3192e7;
+
+            &:hover {
+                color: #3192e7;
+            }
+        }
+
+        &--separator {
+            border-right: 1px solid #333;
+            height: 20px;
+            margin: 0 8px
+        }
+    }
+
+    &__button {
+        padding: 0;
+        color: inherit;
+        cursor: pointer;
+        border: 0;
+        height: 56px;
+        width: 39px;
+        background: transparent;
+    }
+
+    &__input {
+        background-color: transparent;
+        border: none;
+        color: #1b1b1b;
+        font-size: 0.875rem;
+        height: auto;
+        line-height: 1.2rem;
+        margin: 0;
+        padding: 20px;
+        width: 250px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__input-button {
+        padding-right: 16px;
+    }
+}
+
+
+@media (min-width: 500px){
+    .toolbar {
+        width: auto;
+        height: 0px;
+        border: 0;
+
+    position: absolute;
+
+        &__wrapper {
+            margin-top:-60px;
+            margin-right: auto;
+            margin-left: auto;
+            background-color: #ffffff;
+            border: solid 2px #ddd;
+            border-radius: 4px;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            width: 100%;
+            transition: background-color 0.2s ease-in-out;
+        }
+  }
+}

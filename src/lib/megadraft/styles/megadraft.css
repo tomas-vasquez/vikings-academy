@@ -1,0 +1,512 @@
+/*
+ * Copyright (c) 2016, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+/*
+ * Copyright (c) 2018, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+/*
+ * Copyright (c) 2016, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+.sidemenu__button__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -12px 0 0 -12px; }
+
+.megadraft-modal {
+  position: relative;
+  width: 528px;
+  height: 394px;
+  text-align: left;
+  z-index: 10; }
+  .megadraft-modal--open {
+    overflow-y: hidden; }
+  .megadraft-modal--close {
+    overflow-y: auto; }
+  .megadraft-modal__button {
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0;
+    padding: 0;
+    transition: all 0.5s ease;
+    position: relative;
+    background: none;
+    width: 64px;
+    height: 64px;
+    margin-left: 32px; }
+    .megadraft-modal__button .sidemenu__button__icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -16px 0 0 -16px;
+      width: 32px;
+      height: 32px; }
+    .megadraft-modal__button:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      display: inline-block;
+      background-color: #181818; }
+    .megadraft-modal__button__label {
+      margin: 0;
+      font-family: Open Sans, sans-serif;
+      width: 129px;
+      height: 40px;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.14;
+      color: #3c3c3c;
+      text-align: center;
+      cursor: pointer;
+      z-index: 10;
+      padding-top: 9px; }
+  .megadraft-modal__items {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    margin: -24px; }
+  .megadraft-modal__items .megadraft-modal__button {
+    background: none; }
+    .megadraft-modal__items .megadraft-modal__button:before {
+      transition: all 0.1s ease-in-out;
+      background-color: #181818; }
+  .megadraft-modal__item {
+    line-height: 0px;
+    height: 58px;
+    margin: 0 71px 78px 17px;
+    padding-top: 31px;
+    cursor: pointer;
+    width: 82px; }
+    .megadraft-modal__item:hover .megadraft-modal__button__label {
+      color: #0669de; }
+    .megadraft-modal__item:hover .megadraft-modal__button:before {
+      background-color: #0669de; }
+
+.megadraft-editor {
+  position: relative;
+  /*
+ * Copyright (c) 2016, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+  /*
+ * Copyright (c) 2016, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+  /*
+ * Copyright (c) 2018, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+  /*
+ * Copyright (c) 2016, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+  /*
+ * Copyright (c) 2016, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+  /*
+ * Copyright (c) 2016, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */
+  /*
+ * Copyright (c) 2019, Globo.com (https://github.com/globocom)
+ *
+ * License: MIT
+ */ }
+  .megadraft-editor .sidebar {
+    position: relative; }
+    .megadraft-editor .sidebar__menu {
+      float: left;
+      left: -57px;
+      position: absolute; }
+    .megadraft-editor .sidebar__sidemenu-wrapper {
+      padding: 0;
+      list-style: none;
+      margin: 0; }
+  .megadraft-editor .sidemenu {
+    position: relative;
+    width: 36px;
+    text-align: center; }
+    .megadraft-editor .sidemenu__button {
+      border: 0;
+      color: #fff;
+      cursor: pointer;
+      height: 32px;
+      font-size: 0;
+      padding: 0;
+      width: 32px;
+      transition: all 0.5s ease;
+      position: relative;
+      background: none;
+      outline: none; }
+      .megadraft-editor .sidemenu__button:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        display: inline-block;
+        background-color: #181818; }
+        .megadraft-editor .sidemenu__button:before:hover {
+          background-color: #333333; }
+      .megadraft-editor .sidemenu__button--open {
+        transform: rotate(45deg); }
+        .megadraft-editor .sidemenu__button--open:before {
+          background-color: #0669de; }
+      .megadraft-editor .sidemenu__button__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -12px 0 0 -12px; }
+    .megadraft-editor .sidemenu__items {
+      list-style: none;
+      padding: 0;
+      margin-top: 8px;
+      padding-top: 2px;
+      transition: max-height 0.5s ease;
+      overflow: hidden;
+      max-height: 0;
+      width: 36px;
+      text-align: center; }
+    .megadraft-editor .sidemenu__items .sidemenu__button {
+      background: none; }
+      .megadraft-editor .sidemenu__items .sidemenu__button:before {
+        transition: all 0.1s ease-in-out;
+        background-color: #181818; }
+      .megadraft-editor .sidemenu__items .sidemenu__button:hover:before {
+        transform: scale(1.125); }
+    .megadraft-editor .sidemenu__item {
+      height: 40px; }
+  .megadraft-editor .toolbar {
+    background-color: #ffffff;
+    border-bottom: solid 2px #ddd;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    height: 56px;
+    position: fixed;
+    z-index: 1051;
+    width: 100%; }
+    .megadraft-editor .toolbar--open {
+      display: block; }
+    .megadraft-editor .toolbar__error-msg {
+      margin: 0;
+      height: 0;
+      height: 0;
+      transition: height 0.2s ease-in-out; }
+    .megadraft-editor .toolbar--error .toolbar__wrapper {
+      background-color: #E83F26; }
+    .megadraft-editor .toolbar--error .toolbar__arrow {
+      border-color: #E83F26 transparent transparent; }
+    .megadraft-editor .toolbar--error .toolbar__error-msg {
+      color: #FFF;
+      margin: -8px 0 0 20px;
+      padding-bottom: 12px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      height: 28px; }
+    .megadraft-editor .toolbar--error .toolbar__button {
+      color: #FFF; }
+    .megadraft-editor .toolbar--error ::-webkit-input-placeholder {
+      color: #FFF; }
+    .megadraft-editor .toolbar--error :-moz-placeholder {
+      color: #FFF; }
+    .megadraft-editor .toolbar--error ::-moz-placeholder {
+      color: #FFF; }
+    .megadraft-editor .toolbar--error :-ms-input-placeholder {
+      color: #FFF; }
+    .megadraft-editor .toolbar__wrapper {
+      margin-right: auto;
+      margin-left: auto;
+      width: 100%;
+      transition: background-color 0.2s ease-in-out; }
+    .megadraft-editor .toolbar__list {
+      padding: 0 8px;
+      margin: 0;
+      white-space: nowrap; }
+    .megadraft-editor .toolbar__item {
+      display: inline-block;
+      color: #333; }
+      .megadraft-editor .toolbar__item:hover {
+        color: #3f3f3f; }
+      .megadraft-editor .toolbar__item--active {
+        color: #3192e7; }
+        .megadraft-editor .toolbar__item--active:hover {
+          color: #3192e7; }
+      .megadraft-editor .toolbar__item--separator {
+        border-right: 1px solid #333;
+        height: 20px;
+        margin: 0 8px; }
+    .megadraft-editor .toolbar__button {
+      padding: 0;
+      color: inherit;
+      cursor: pointer;
+      border: 0;
+      height: 56px;
+      width: 39px;
+      background: transparent; }
+    .megadraft-editor .toolbar__input {
+      background-color: transparent;
+      border: none;
+      color: #1b1b1b;
+      font-size: 0.875rem;
+      height: auto;
+      line-height: 1.2rem;
+      margin: 0;
+      padding: 20px;
+      width: 250px; }
+      .megadraft-editor .toolbar__input:focus {
+        outline: none; }
+    .megadraft-editor .toolbar__input-button {
+      padding-right: 16px; }
+  @media (min-width: 500px) {
+    .megadraft-editor .toolbar {
+      width: auto;
+      height: 0px;
+      border: 0;
+      position: absolute; }
+      .megadraft-editor .toolbar__wrapper {
+        margin-top: -60px;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #ffffff;
+        border: solid 2px #ddd;
+        border-radius: 4px;
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+        width: 100%;
+        transition: background-color 0.2s ease-in-out; } }
+  .megadraft-editor .block__hover:hover {
+    border-radius: 5px; }
+  .megadraft-editor .block__hover--readonly {
+    padding: 8px;
+    margin: -8px; }
+  .megadraft-editor .block__wrapper {
+    border-radius: 3px;
+    border: solid 2px #32325da3;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important; }
+  .megadraft-editor .block__controls {
+    overflow: auto;
+    padding: 0 7px 0 0;
+    background-color: #f7f7f7;
+    border-bottom: solid 2px #32325da3; }
+  .megadraft-editor .block__action-group {
+    color: #6e6e6e;
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .megadraft-editor .block__action {
+    display: inline-block;
+    padding: 0 5px;
+    line-height: 40px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0; }
+    .megadraft-editor .block__action:hover {
+      color: #000; }
+    .megadraft-editor .block__action__icon {
+      vertical-align: middle; }
+  .megadraft-editor .block__content {
+    line-height: 100px;
+    text-align: center; }
+    .megadraft-editor .block__content--with-padding {
+      padding: 16px; }
+    .megadraft-editor .block__content:before, .megadraft-editor .block__content:after {
+      position: absolute;
+      width: 100%;
+      height: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      content: "";
+      left: 0; }
+    .megadraft-editor .block__content:before {
+      top: 0; }
+    .megadraft-editor .block__content:after {
+      bottom: 0; }
+  .megadraft-editor .block__notfound__icon {
+    color: #999;
+    vertical-align: middle;
+    width: 64px;
+    height: 64px;
+    margin: 104px; }
+  .megadraft-editor .block__data {
+    padding: 16px;
+    padding-top: 8px;
+    background-color: #fff; }
+  .megadraft-editor .block__input {
+    border: 0;
+    border-bottom: 1px dashed transparent;
+    color: #333;
+    display: block;
+    padding: 8px 0;
+    width: 100%;
+    font-size: 0.75rem; }
+    .megadraft-editor .block__input--small-padding {
+      padding: 8px 0 5px 0; }
+    .megadraft-editor .block__input--big-text {
+      font-size: 1rem;
+      font-weight: bold; }
+    .megadraft-editor .block__input__row {
+      line-height: 1rem; }
+    .megadraft-editor .block__input__wrapper {
+      position: relative; }
+    .megadraft-editor .block__input__icon {
+      position: absolute;
+      top: 50%;
+      margin-top: -8px;
+      right: 0;
+      width: 16px;
+      height: 16px;
+      display: none;
+      pointer-events: none; }
+    .megadraft-editor .block__input:hover {
+      border-color: #999; }
+    .megadraft-editor .block__input:hover + svg.block__input__icon {
+      display: inline-block; }
+    .megadraft-editor .block__input:focus {
+      border-color: #0072de;
+      border-style: solid; }
+    .megadraft-editor .block__input:focus + svg.block__input__icon {
+      display: inline-block; }
+    .megadraft-editor .block__input:placeholder {
+      color: #999; }
+    .megadraft-editor .block__input--empty {
+      border-color: #ccc; }
+      .megadraft-editor .block__input--empty :hover {
+        border-color: #999; }
+    .megadraft-editor .block__input--empty + svg.block__input__icon {
+      color: #999;
+      display: inline-block; }
+    .megadraft-editor .block__input--error, .megadraft-editor .block__input--error.block__input--empty, .megadraft-editor .block__input--error:hover {
+      border-color: #ff351e;
+      border-style: solid; }
+    .megadraft-editor .block__input--error + svg.block__input__icon {
+      color: #ff351e;
+      display: inline-block; }
+    .megadraft-editor .block__input__error-text {
+      color: #ff351e;
+      margin-top: 6px;
+      font-size: 0.75rem; }
+    .megadraft-editor .block__input--readonly, .megadraft-editor .block__input--readonly.block__input--empty, .megadraft-editor .block__input--readonly:hover {
+      border: none; }
+    .megadraft-editor .block__input--readonly:hover + svg.block__input__icon {
+      display: none; }
+    .megadraft-editor .block__input--readonly:focus {
+      border: none; }
+    .megadraft-editor .block__input--readonly:focus + svg.block__input__icon {
+      display: none; }
+  .megadraft-editor .dropdown__wrapper {
+    border-radius: 2px;
+    position: absolute;
+    background: #f7f7f7;
+    color: #6e6e6e;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10; }
+    .megadraft-editor .dropdown__wrapper--open {
+      box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+      color: #333;
+      background-color: #fff; }
+  .megadraft-editor .dropdown {
+    display: none;
+    list-style: none;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    padding: 8px 0; }
+    .megadraft-editor .dropdown--open {
+      display: block; }
+  .megadraft-editor .dropdown__arrow {
+    margin-left: 5px;
+    vertical-align: middle; }
+    .megadraft-editor .dropdown__arrow--open {
+      transform: rotate(180deg); }
+  .megadraft-editor .dropdown__option {
+    color: #999; }
+    .megadraft-editor .dropdown__option:hover {
+      background-color: #0669de;
+      color: #fff; }
+  .megadraft-editor .dropdown__item {
+    padding: 0 8px;
+    line-height: 40px;
+    font-size: 0;
+    user-select: none; }
+    .megadraft-editor .dropdown__item--selected:hover {
+      color: #333; }
+    .megadraft-editor .dropdown__item__text {
+      vertical-align: middle;
+      margin-left: 8px;
+      font-size: 0.75rem; }
+    .megadraft-editor .dropdown__item__icon {
+      vertical-align: middle; }
+  .megadraft-editor .media__message--error {
+    background-color: #e83f26;
+    color: #fff; }
+  .megadraft-editor .media__message--warning {
+    background-color: #fff7d8;
+    color: #b59223;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .megadraft-editor .media__message-text {
+    text-align: left;
+    padding: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: bold; }
+  .megadraft-editor .move-control {
+    border: 8px solid rgba(238, 238, 238, 0);
+    border-radius: 6px;
+    display: flex; }
+  .megadraft-editor .move-control:hover {
+    border: 4px solid #95aaca;
+    margin: 4px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(149, 153, 190, 0.15) !important; }
+  .megadraft-editor .move-control:hover > .options {
+    border: 4px solid #95aaca;
+    display: block; }
+  .megadraft-editor .move-control__target {
+    width: 100%; }
+  .megadraft-editor .move-control--swapped {
+    margin-left: -8px; }
+  .megadraft-editor .options--swapped {
+    margin-left: 8px !important; }
+  .megadraft-editor .options {
+    width: 40px;
+    height: fit-content;
+    margin: -4px -50px -17px 0px;
+    padding: 4px;
+    border-radius: 0  4px 4px  0;
+    background-color: #eee;
+    display: none;
+    transition: margin 0.3s;
+    cursor: default;
+    z-index: 1000; }
+  .megadraft-editor .options__button {
+    border: 0;
+    width: 24px;
+    font-size: 0;
+    padding: 0;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    color: #000000d3; }
+  .megadraft-editor .options__button--disabled {
+    pointer-events: none;
+    opacity: 0.5; }
+  .megadraft-editor .options__button:hover {
+    background: rgba(33, 33, 33, 0.08);
+    border-radius: 50%; }
+  .megadraft-editor .options__button:active {
+    background: rgba(33, 33, 33, 0.16); }
+  .megadraft-editor .options__button--up {
+    transform: rotate(180deg); }
