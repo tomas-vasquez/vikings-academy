@@ -38,7 +38,7 @@ export default (state = initialState, action) => {
 
         //USADOS SOLO POR autoRefresher
     } else if (action.type === 'SUBSCRIBE_TO_AUTO_REFRESHER') {
-        console.log("add:", { name: action.name, priority: action.priority, myCallBack: action.myCallBack });
+        // console.log("add:", { name: action.name, priority: action.priority, myCallBack: action.myCallBack });
         aux = state;
         //ELIMINAMOS el que ya tenemos
         aux.autoRefresherSubscribers = aux.autoRefresherSubscribers.filter(subscriber => {

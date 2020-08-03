@@ -8,7 +8,7 @@ export default (state = {}, action) => {
 
         aux = state; 
         let isAlreadyinIndex = aux[action.item_id].data.findIndex(element => {
-            return action.comment.comment_id === element.comment_id;
+            return action.comment.id === element.id;
         })
 
         if (isAlreadyinIndex !== -1) {

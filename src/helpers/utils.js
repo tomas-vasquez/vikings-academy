@@ -5,6 +5,7 @@ export const getLastTimeMark = (data, key) => {
     if (element[key] > last)
       last = element[key];
   });
+  // console.log(last);
   return last;
 }
 
@@ -18,7 +19,7 @@ export const mergeComments = (array1, array2) => {
   array2.forEach(element1 => {
 
     let isAlreadyinIndex = array1.findIndex(element2 => {
-      return(element1.comment_id === element2.comment_id)
+      return(element1.id === element2.id)
     });
 
     if(isAlreadyinIndex === -1) {

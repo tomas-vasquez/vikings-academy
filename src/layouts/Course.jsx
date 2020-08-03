@@ -15,6 +15,8 @@ import Controller_Academy from "_controllers/Academy";
 import logo from "assets/img/vikings-logo.png";
 import DB from "helpers/db";
 import Course from "views/Course";
+import Controller_admin from "_controllers";
+import Controller_AutoRefresh from "_controllers/AutoRefresh";
 
 var ps;
 
@@ -34,16 +36,24 @@ class CourseLayouth extends React.Component {
     };
     this.academy = new Controller_Academy();
     this.db = new DB();
+    this.controlleradmin = new Controller_admin();
+    this.autoRefresher = new Controller_AutoRefresh();
   }
   componentDidMount() {
     let course_title = document.baseURI.split("/")[3];
     // //cargamos los datos principales
+    if (!this.props.isBeenLoadedMainData) {
+      // console.log("hola");
+      this.controlleradmin.initApp(this);
+      
+    }
 
     if (this.props.academy.courses[0] === undefined) {
       this.academy.loadCourses(() => {
         if (this.props.academy.items[course_title] === undefined) {
           this.academy.loadItems(course_title, () => {
             this.forceUpdate();
+          this.autoRefresher.updateSubscribers();
           });
         }
       });
@@ -51,6 +61,7 @@ class CourseLayouth extends React.Component {
       if (this.props.academy.items[course_title] === undefined) {
         this.academy.loadItems(course_title, () => {
           this.forceUpdate();
+          this.autoRefresher.updateSubscribers();
         });
       }
     }
@@ -115,6 +126,7 @@ class CourseLayouth extends React.Component {
   };
   render() {
     this.currentItem = null;
+    let course = null;
     let course_title = document.baseURI.split("/")[3];
     let items = this.props.academy.items[course_title];
     let author = null;
@@ -131,6 +143,10 @@ class CourseLayouth extends React.Component {
             return author.user_id === item.item_author_id;
           });
         }
+      });
+
+      course = this.props.academy.courses.find((course) => {
+        return (course.course_short_link === course_title);
       });
 
       description = this.props.academy.descriptions[
@@ -160,7 +176,7 @@ class CourseLayouth extends React.Component {
               imgSrc: logo,
             }}
             items={items}
-            course_title={course_title}
+            course_title={course? course.course_short_link: ""}
             currentItem={this.currentItem}
             toggleSidebar={this.toggleSidebar}
           />
@@ -172,13 +188,13 @@ class CourseLayouth extends React.Component {
             <>
               <AdminNavbar
                 {...this.props}
-                brandText={course_title}
+                brandText={course? course.course_short_link: ""}
                 toggleSidebar={this.toggleSidebar}
                 sidebarOpened={this.state.sidebarOpened}
               />
               {this.currentItem !== null ? (
                 <Course
-                  course={course_title}
+                  course={course}
                   description={description}
                   author={author}
                   itemIndex={this.itemIndex}

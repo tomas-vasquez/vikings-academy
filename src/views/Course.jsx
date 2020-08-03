@@ -15,15 +15,11 @@ import {
   CardBody,
   ButtonGroup,
   Button,
-  Nav,
-  NavItem,
-  NavLink,
-  TabContent,
-  TabPane,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { flagsUrl } from "config";
 import { storageUrl } from "config";
+import Comments from "components/Comments";
 
 class Course extends React.Component {
   constructor(props) {
@@ -31,13 +27,7 @@ class Course extends React.Component {
     moment.locale("es");
     this.state = { activeTab: "image" };
   }
-  // componentDidMount = () => {
-  //   let currentItem = this.props.currentItem;
-  //   if (currentItem !== null) {
-  //     let description = this.props.descriptions;
-  //   }
-  // };
-  componentDidUpdate = () => {};
+
   render() {
     let course = this.props.course;
     let description = this.props.description;
@@ -106,7 +96,7 @@ class Course extends React.Component {
                       </Col>
 
                       {/* botones siguiente y anterior */}
-                      {author !== null ? (
+                      {author !== null && course !== null ? (
                         <Col xs="auto" className="ml-auto mb-1">
                           <ButtonGroup>
                             <Button
@@ -114,7 +104,7 @@ class Course extends React.Component {
                               replace
                               to={
                                 "/" +
-                                course +
+                                course.course_short_link +
                                 "/" +
                                 (proviusItem
                                   ? proviusItem.item_title.replace(/ /g, "_")
@@ -137,7 +127,7 @@ class Course extends React.Component {
                               replace
                               to={
                                 "/" +
-                                course +
+                                course.course_short_link +
                                 "/" +
                                 (nextItem
                                   ? nextItem.item_title.replace(/ /g, "_")
@@ -160,78 +150,48 @@ class Course extends React.Component {
                     </Row>
                     <hr className="m-0 mb-2" />
 
-                    <Nav tabs className="px-3 border-bottom">
-                      <NavItem>
-                        <NavLink
-                          className={classnames({
-                            active: this.state.activeTab === "image",
-                          })}
-                          onClick={() => {
-                            this.setState({ activeTab: "image" });
-                          }}
-                          style={{ cursor: "pointer" }}
-                        >
-                          Descripcion
-                        </NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink
-                          className={classnames({
-                            active: this.state.activeTab === "color",
-                          })}
-                          onClick={() => {
-                            this.setState({ activeTab: "color" });
-                          }}
-                          style={{ cursor: "pointer" }}
-                        >
-                          Comunidad
-                        </NavLink>
-                      </NavItem>
-                    </Nav>
-
-                    <TabContent activeTab={this.state.activeTab}>
-                      <TabPane tabId="image">
-                        <div className="px-2">
-                          <div className="p-2 py-3">
-                            {description !== undefined
-                              ? parser(description)
-                              : null}
+                    <div className="px-2">
+                      <div className="p-2 py-3">
+                        {description !== undefined ? parser(description) : null}
+                      </div>
+                      {/* autor del video */}
+                      {author !== null ? (
+                        <>
+                          <div className="media align-items-center mb-3">
+                            <img
+                              alt={author.name}
+                              className="avatar rounded-circle mr-3"
+                              src={pic_url}
+                            />
+                            <img
+                              className="avatar-flag"
+                              src={flagsUrl + author.flag + ".png"}
+                              alt={author.flag}
+                            />
+                            <div className="media-body">
+                              {author.name}
+                              <br />
+                              <small className="text-muted mt-0">
+                                {moment(
+                                  currentItem.created_at,
+                                  "ISO"
+                                ).fromNow()}
+                              </small>
+                            </div>
                           </div>
-                          {/* autor del video */}
-                          {author !== null ? (
-                            <>
-                              <div className="media align-items-center mb-3">
-                                <img
-                                  alt={author.name}
-                                  className="avatar rounded-circle mr-3"
-                                  src={pic_url}
-                                />
-                                <img
-                                  className="avatar-flag"
-                                  src={flagsUrl + author.flag + ".png"}
-                                  alt={author.flag}
-                                />
-                                <div className="media-body">
-                                  {author.name}
-                                  <br />
-                                  <small className="text-muted mt-0">
-                                    {moment(
-                                      currentItem.created_at,
-                                      "ISO"
-                                    ).fromNow()}
-                                  </small>
-                                </div>
-                              </div>
-                            </>
-                          ) : null}
-                        </div>
-                      </TabPane>
-                      <TabPane tabId="color">
-                        
-                      </TabPane>
-                    </TabContent>
+                        </>
+                      ) : null}
+                    </div>
                   </CardBody>
                 </Card>
+
+                {/* comentarios */}
+                {currentItem !== null ? (
+                  <Comments
+                    targetId={"item-" + course.id + "-" + currentItem.id}
+                  />
+                ) : null}
+
               </Col>
             </Row>
           </Container>
